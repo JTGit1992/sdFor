@@ -5,7 +5,7 @@ explain
 - Sping boot 3
 - Jpa
 - QueryDsl
-- Spirng Sequrity
+- Spring Security
 
 
 
