@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jt.sdfor.biz.mybatisMapper.SampleMapper">
+    <select id="findById" resultType="com.jt.sdfor.biz.ctgy.board1.dto.Board1Dto$Response$Search">
+        SELECT * FROM board WHERE board_id = #{id}
+    </select>
+</mapper>
