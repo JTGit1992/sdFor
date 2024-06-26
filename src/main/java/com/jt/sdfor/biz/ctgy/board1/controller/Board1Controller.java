@@ -30,9 +30,9 @@ public class Board1Controller {
         return RestResponse.of(board1Service.sample1());
     }
 
-    @GetMapping("/sample2")
+    @GetMapping("/sample-mybatis")
     public ResponseEntity<? extends IRestResponse> sample2 () {
 
-        return new ResponseEntity<>(null);
+        return RestResponse.of(board1Service.sampleForMyBatis());
     }
 }
