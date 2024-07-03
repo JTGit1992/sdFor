@@ -9,7 +9,7 @@ explain
 
 
 
-## Git Commit Role
+## Git Commit Rule
 feat / fix / refactor  
   
 feat : 신규개발  
