@@ -3,6 +3,8 @@ package com.jt.sdfor.biz.ctgy.board1.dto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Board1Dto {
 
@@ -45,7 +47,6 @@ public class Board1Dto {
             private Long dislike;
             private Long viewCount;
             private String regiestId;
-
 
         }
     }

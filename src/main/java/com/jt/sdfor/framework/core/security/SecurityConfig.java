@@ -6,6 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.List;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
@@ -31,8 +38,21 @@ public class SecurityConfig {
 //                                .logoutUrl("/logout")
 //                                .permitAll() // 로그아웃 페이지는 인증 없이 접근 가능
 //                )
-                .csrf(csrf -> csrf.disable()); // CSRF 보호 비활성화 (개발 중에만, 실제로는 활성화 필요)
-
+                .csrf(csrf -> csrf.disable()) // CSRF 보호 비활성화 (개발 중에만, 실제로는 활성화 필요)
+                .cors(withDefaults()) // CORS 설정 적용
+        ;
         return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://localhost:3000"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+        configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }
