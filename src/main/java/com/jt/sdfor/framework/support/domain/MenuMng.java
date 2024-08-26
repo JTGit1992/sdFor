@@ -32,6 +32,8 @@ public class MenuMng {
     @Comment("메뉴URL")
     private String menuUrl;
 
-
+    @Column(name = "menu_cd")
+    @Comment("메뉴코드")
+    private String menuCd;
 
 }
