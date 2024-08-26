@@ -5,11 +5,11 @@ explain
 - Sping boot 3
 - Jpa
 - QueryDsl
-- Spirng Sequrity
+- Spring Security
 
 
 
-## Git Commit Role
+## Git Commit Rule
 feat / fix / refactor  
   
 feat : 신규개발  
